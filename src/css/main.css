@@ -78,7 +78,7 @@ p {
    * Unselected: #F7F7F8
    */
 
-   html {
+   html { /* Define global Reusable Variables. Saves time. */
       --color-primary: #457CE7;
       --color-primary-accent: #8091B3;
       --color-secondary: #F5D63D;
@@ -103,11 +103,6 @@ p {
       color: var(--color-primary);
    }
 
-/* Fonts
-   ========================== */
-
-
-
 /* =====================================
    || Layout Rules
    =====================================
@@ -120,6 +115,7 @@ p {
 
 #header {
    border-bottom: solid 2px var(--color-border);
+   padding: 0 25px;
 }
 
 #footer {
@@ -129,12 +125,22 @@ p {
 
 #main {
    background-color: #E0E2E6;
+   padding-top: 25px;
 }
+
+/* Alignment (Flex and Grid)
+   ========================== */
 
 .flex-header {
    align-items: center;
    display: flex;
    justify-content: left;
+}
+
+.flex-card-content {
+   align-items: center;
+   display: flex;
+   justify-content: flex-start;
 }
 
 
@@ -153,12 +159,11 @@ p {
    ========================== */
 
 .header-container{
-   padding: 5px 35px 5px 35px;
+   padding: 5px 0px 5px 0px;
 }
 
 .header-nav {
    margin-right: 25px;
-   
 }
 
 .header-title h1 {
@@ -171,8 +176,37 @@ p {
 
 .footer-social {
    text-align: center;
+   color: var(--color-primary-accent);
 }
 
+/* Card Component
+   ========================== */
+.itemCard-container {
+   background-color: var(--color-light);
+   border-top-left-radius: 7px;
+   border-top-right-radius: 7px;
+   margin: 0px 25px 15px 25px;
+   padding: 5px 20px 5px 20px;
+}
+
+.itemCard-icon {
+   margin-right: 10px;
+   text-align: center;
+   width: 10%;
+}
+.itemCard-icon img {
+   width: 26px;
+}
+
+.itemCard-title {
+   width: 80%;
+}
+
+.itemCard-open {
+   text-align: center;
+   width: 10%;
+}
+   
 /* =====================================
    || State Rules
    ===================================== 
