@@ -38,25 +38,12 @@ body {
    padding: 0;
 }
 
-h1 {
-   font-size: var(--text-h1);
-}
-h2 {
-   font-size: var(--text-h2);
-}
-h3 {
-   font-size: var(--text-h3);
-}
-h4 {
-   font-size: var(--text-h4);
-}
-h5 {
-   font-size: var(--text-h5);
-}
-
-p {
-   font-size: var(--text-p);
-}
+h1 {font-size: var(--text-h1);}
+h2 {font-size: var(--text-h2);}
+h3 {font-size: var(--text-h3);}
+h4 {font-size: var(--text-h4);}
+h5 {font-size: var(--text-h5);}
+p {font-size: var(--text-p);}
 
 /* =====================================
    || Theme & Utility Rules
@@ -66,38 +53,27 @@ p {
    * Also used for theme and design styling. This can include brand color classes, font
    * size classes, gradient classes, link color classes, etc.
 */
-   /* Style Guide ================
-   * Primary Typeface: Public Sans
-   * Primary: #457CE7
-   * Primary Accent: #8091B3
-   * Secondary: #F5D63D
-   * Dark: #0D0D0D
-   * Light: #ffffff
-   * Background: #E0E2E6
-   * Border: #DBDDE1
-   * Unselected: #F7F7F8
-   */
 
-   html { /* Define global Reusable Variables. Saves time. */
+   html { /* Define global reusable Variables/custom properties. Saves time. */
       --color-primary: #457CE7;
       --color-primary-accent: #8091B3;
       --color-secondary: #F5D63D;
       --color-dark: #0D0D0D;
-      --color-light: #ffffff;
+      --color-light: #FFFFFF;
       --color-border: #DBDDE1;
+      --color-bg: #E0E2E6;
       --color-unselected: #F7F7F8;
 
       --text-display: 52px;
       --text-h1: 48px;
       --text-h2: 32px;
-      --text-h3: 24px;
+      --text-h3: 26px;
       --text-h4: 16px;
       --text-h5: 12px;
       --text-p: 16px;
       --text-p-small: 12px;
    }
-/* Colors
-   ========================== */
+/* Colors */
 
    .text-primary {
       color: var(--color-primary);
@@ -115,21 +91,22 @@ p {
 
 #header {
    border-bottom: solid 2px var(--color-border);
+   height: 8vh;
    padding: 0 25px;
 }
 
 #footer {
    border-top: solid 2px var(--color-border);
-   padding: 5px 0px 5px 0px;
+   height: 5vh;
+   padding: 5px 0px;
 }
 
 #main {
-   background-color: #E0E2E6;
+   background-color: var(--color-bg);
    padding-top: 25px;
 }
 
-/* Alignment (Flex and Grid)
-   ========================== */
+/* Alignment (Flex and Grid) */
 
 .flex-header {
    align-items: center;
@@ -137,12 +114,29 @@ p {
    justify-content: left;
 }
 
-.flex-card-content {
+.flex-footer {
    align-items: center;
    display: flex;
-   justify-content: flex-start;
+   justify-content: center;
 }
 
+.grid-sidebar-header {
+   display: grid;
+   grid-template-columns: 80% 20%;
+   grid-template-rows: 100% auto;
+}
+
+.grid-itemCard {
+   align-items: center;
+   display: grid;
+   grid-auto-rows: 35px auto;
+   grid-template-columns: minmax(30px,40px) minmax(80%,95%) minmax(5%,15%);
+}
+
+.grid-infoCard {
+   display: grid;
+   grid-template-columns: 25% 25% 25% 25%;
+}
 
 /* =====================================
    || Module Rules
@@ -155,63 +149,177 @@ p {
    * e.g. forms, buttons, sliders, dropdowns, video, audio, etc.
 */
 
-/* Header Bar
-   ========================== */
-
+/* Header Bar */
 .header-container{
    padding: 5px 0px 5px 0px;
 }
 
 .header-nav {
-   margin-right: 25px;
+   margin-right: 30px;
 }
 
 .header-title h1 {
-   font-size: var(--text-h4);
+   font-size: 1.0rem;
    font-weight: 800;
 }
 
-/* Footer
-   ========================== */
-
+/* Footer */
 .footer-social {
-   text-align: center;
    color: var(--color-primary-accent);
+   text-align: center;
+}
+.footer-social i {margin: 0px 5px;}
+
+/* Filter Sidebar Component */
+.sidebar-container {
+   background-color: var(--color-light);
+   border: 2px solid var(--color-border);
+   height: 90%;
+   position: absolute;
+   top: 8%;
+   width: 45%;
+}
+.sidebar-header {
+   align-items: center;
+   background-color: var(--color-bg);
+   height: 7%;
+   justify-content: flex-start;
+   padding-left: 25px;
+   text-align: left;
+}
+.sidebar-filters {
+   padding: 10px 25px;
 }
 
-/* Card Component
-   ========================== */
+.sidebar-filters label {
+   font-size: var(--text-h4);
+   font-weight: 600;
+} 
+.sidebar-filters img {
+   width: 78px;
+}
+
+/* Item Card Component */
 .itemCard-container {
    background-color: var(--color-light);
    border-top-left-radius: 7px;
    border-top-right-radius: 7px;
    margin: 0px 25px 15px 25px;
-   padding: 5px 20px 5px 20px;
+   padding: 8px 20px 13px 20px;
 }
 
 .itemCard-icon {
-   margin-right: 10px;
-   text-align: center;
-   width: 10%;
+   padding-top: 4px;
+   text-align: left;
 }
 .itemCard-icon img {
-   width: 26px;
+   width: 22px;
 }
 
 .itemCard-title {
-   width: 80%;
+   font-weight: 600;
+   text-align: left;
+}
+
+.itemCard-tags {
+   grid-column-end: 3;
+   grid-column-start: 2;
 }
 
 .itemCard-open {
+   font-size: 22px;
+   grid-column-start: 3;
+   grid-row-end: 3;
+   grid-row-start: 1;
    text-align: center;
-   width: 10%;
 }
-   
+
+/* info Card Component */
+
+.infoCard-container {
+   background-color: var(--color-light);
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
+   margin: 0px 25px;
+   padding: 8px 20px 13px 20px;
+}
+.infoCard-container h3 {margin-bottom: 15px;}
+.infoCard-rating {
+   grid-column-end: 5;
+   grid-column-start: 4;
+   padding-top: 28px;
+   text-align: center;
+}
+.infoCard-rating img {width: 16px;}
+.infoCard-rating h4 {display:inline; width: 50%;}
+.infoCard-desc {
+   grid-column: 1/4;
+}
+.infoCard-desc p {margin-top: 15px;}
+.infoCard-preview {
+   grid-column: 1/4;
+}
+.infoCard-preview h4 {margin: 15px 0 10px 0; font-size: 1.02rem;}
+.infoCard-preview p {margin-top: 10px;}
+.infoCard-styles {
+   grid-column: 1/5;
+   margin-bottom: 20px;
+}
+.infoCard-styles hr {border: var(--color-border) 1px solid;}
+.infoCard-styles-caption {
+   display: grid;
+   grid-template-columns: 25% 25% 25% 25%;
+}
+.infoCard-styles-caption h5 {
+   color: var(--color-primary-accent);
+   font-weight: 400;
+   margin-bottom: 4px;
+}
+.infoCard-styles-font {
+   display: grid;
+   grid-template-columns: 25% 25% 25% 25%;
+}
+.infoCard-styles-font h3 {margin-top: 0px;}
+.infoCard-link1 {
+   grid-column: 1/3;
+}
+.infoCard-link2 {
+   grid-column: 3/5;
+}
+.infoCard-link1 button,
+.infoCard-link2 button {
+   width: 95%;
+}
+
+/* Button Components */
+
+.btn-tag {
+   background-color: var(--color-primary);
+   border-radius: 20px;
+   border: none;
+   color: var(--color-light);
+   font-size: var(--text-p-small);
+   font-weight: 500;
+   padding: 1px 15px;
+   text-align: center;
+}
+
+.btn-primary {
+   background-color: var(--color-primary);
+   border-radius: 4px;
+   border: none;
+   color: var(--color-light);
+   font-size: var(--text-p);
+   padding: 8px 20px;
+   text-align: center;
+}
+
+
 /* =====================================
    || State Rules
    ===================================== 
    * Contains rules for the different possible variations of a single element or module.
-   * At its simplest form, it can offer two styles for activated or deactivated.
+   * At its simplest form, it can offer two styles for activated or deactivated states.
    * 
    * Can be applied to layout or modules. Typically utilizes JavaScript to function.
    * e.g. isActive, hasError, InputSuccess, hidden, shown, etc.

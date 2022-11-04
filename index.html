@@ -13,7 +13,7 @@
 </head>
   <body>
     <!-- Header Content Section -->
-    <header id="header">
+    <header id="header" class="flex-header">
       <div class="header-container flex-header">
         <div class="header-nav">
           <nav>
@@ -27,8 +27,55 @@
     </header>
   <!-- Main Content Section -->
     <main id="main">
+      <!-- Filter -->
+      <aside class="sidebar-container">
+        <div class="sidebar-header grid-sidebar-header">
+          <h3>Type</h3>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="sidebar-filters">
+          <form action="">
+            <input type="radio" name="typefilter" id="serif">
+            <label id="serif">Serif</label>
+            <br>
+            <input type="radio" name="typefilter" id="sansserif">
+            <label id="sansserif">Sans Serif</label>
+            <br>
+            <input type="radio" name="typefilter" id="handwriting">
+            <label id="handwriting">Handwriting</label>
+            <br>
+            <input type="radio" name="typefilter" id="display">
+            <label id="display">Display</label>
+            <br>
+            <input type="radio" name="typefilter" id="monospace">
+            <label id="monospace">Monospace</label>
+          </form>
+        </div>
+        <div class="sidebar-header grid-sidebar-header">
+          <h3>Rating</h3>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="sidebar-filters">
+          <form action="">
+            <input type="radio" name="ratingfilter" id="1star">
+            <label id="1star"><img src="/images/Star Rating_1.png" alt="rating1star"></label>
+            <br>
+            <input type="radio" name="ratingfilter" id="2star">
+            <label id="2star"><img src="/images/Star Rating_2.png" alt="rating2star"></label>
+            <br>
+            <input type="radio" name="ratingfilter" id="3star">
+            <label id="3star"><img src="/images/Star Rating_3.png" alt="rating3star"></label>
+            <br>
+            <input type="radio" name="ratingfilter" id="4star">
+            <label id="4star"><img src="/images/Star Rating_4.png" alt="rating4star"></label>
+            <br>
+            <input type="radio" name="ratingfilter" id="5star">
+            <label id="5star"><img src="/images/Star Rating_5.png" alt="rating5star"></label>
+          </form>
+        </div>
+      </aside>
       <!-- Item Cards Section -->
-      <div class="itemCard-container flex-card-content">
+      <div class="itemCard-container grid-itemCard">
         <div class="itemCard-icon">
           <img src="/images/Font Icon_01_@0.5x.png" alt="generic font icon">
         </div>
@@ -38,8 +85,14 @@
         <div class="itemCard-open">
           <i class="fa-solid fa-chevron-right"></i>
         </div>
+        <div class="itemCard-tags">
+          <button class="btn-tag">Serif</button>
+          <button class="btn-tag">Elegant</button>
+          <button class="btn-tag">Serious</button>
+          <button class="btn-tag">Classical</button>
+        </div>
       </div>
-      <div class="itemCard-container flex-card-content">
+      <div class="itemCard-container grid-itemCard">
         <div class="itemCard-icon">
           <img src="/images/Font Icon_01_@0.5x.png" alt="generic font icon">
         </div>
@@ -49,8 +102,14 @@
         <div class="itemCard-open">
           <i class="fa-solid fa-chevron-right"></i>
         </div>
+        <div class="itemCard-tags">
+          <button class="btn-tag">Serif</button>
+          <button class="btn-tag">Elegant</button>
+          <button class="btn-tag">Serious</button>
+          <button class="btn-tag">Classical</button>
+        </div>
       </div>
-      <div class="itemCard-container flex-card-content">
+      <div class="itemCard-container grid-itemCard">
         <div class="itemCard-icon">
           <img src="/images/Font Icon_01_@0.5x.png" alt="generic font icon">
         </div>
@@ -60,36 +119,56 @@
         <div class="itemCard-open">
           <i class="fa-solid fa-chevron-right"></i>
         </div>
-      </div>
-      <div class="itemCard-container flex-card-content">
-        <div class="itemCard-icon">
-          <img src="/images/Font Icon_01_@0.5x.png" alt="generic font icon">
-        </div>
-        <div class="itemCard-title">
-          <h3>Font Name</h3>
-        </div>
-        <div class="itemCard-open">
-          <i class="fa-solid fa-chevron-right"></i>
+        <div class="itemCard-tags">
+          <button class="btn-tag">Serif</button>
+          <button class="btn-tag">Elegant</button>
+          <button class="btn-tag">Serious</button>
+          <button class="btn-tag">Classical</button>
         </div>
       </div>
-      <div class="itemCard-container flex-card-content">
-        <div class="itemCard-icon">
-          <img src="/images/Font Icon_01_@0.5x.png" alt="generic font icon">
+    <!-- Info Cards Section -->
+      <div class="infoCard-container grid-infoCard">
+        <div class="infoCard-desc">
+          <h3>Description</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam vitae beatae aspernatur, aliquam minus molestias amet temporibus quo ab?</p>
         </div>
-        <div class="itemCard-title">
-          <h3>Font Name</h3>
+        <div class="infoCard-rating">
+          <img src="/images/Star Icon.png" alt="star icon">
+          <h4>5/5</h4>
         </div>
-        <div class="itemCard-open">
-          <i class="fa-solid fa-chevron-right"></i>
+        <div class="infoCard-preview">
+          <h3>Preview</h3>
+          <h4>Umbra of a Prince</h4>
+          <p>The Black, leather-bound tome seemed to emit a sinister aura. Whatever it was, it was certainly no ordinary book. Oddly enough, I found myself attracted to it; I was mesmerized by its abberant nature.</p>
+        </div>
+        <div class="infoCard-styles">
+          <h3>Font Styles</h3>
+          <hr>
+            <div class="infoCard-styles-caption">
+              <h5>Regular</h5>
+              <h5>Medium</h5>
+              <h5>SemiBold</h5>
+              <h5>Bold</h5>
+            </div>
+            <div class="infoCard-styles-font">
+              <h3 class="infoCard-styles-reg">Font</h3>
+              <h3 class="infoCard-styles-med">Font</h3>
+              <h3 class="infoCard-styles-semibold">Font</h3>
+              <h3 class="infoCard-styles-bold">Font</h3>
+            </div>
+        </div>
+        <div class="infoCard-link1">
+          <button class="btn-primary"><i class="fa-solid fa-copy"></i> Code Link</button>
+        </div>
+        <div class="infoCard-link2">
+          <button class="btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Font Page</button>
         </div>
       </div>
-      
-      <article>Item Info</article>
     </main>
 
   <!-- Footer Content Section -->
-    <footer id="footer">
-      <div class="footer-social">
+    <footer id="footer" class="flex-footer">
+      <div class="footer-social flex-footer">
         <i class="fa-brands fa-square-twitter"></i>
         <i class="fa-brands fa-linkedin"></i>
         <i class="fa-brands fa-square-github"></i>
