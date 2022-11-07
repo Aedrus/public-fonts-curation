@@ -15,13 +15,13 @@
     <!-- Header Content Section -->
     <header id="header" class="flex-header">
       <div class="header-container flex-header">
-        <div class="header-nav">
-          <nav>
-            <a href="#"><img src="/images/Hamburger Menu.png" alt="Hamburger Icon" width="18px"></a>
-          </nav>
-        </div>
         <div class="header-title">
           <h1>The Google Fonts <span class="text-primary">Curation</span></h1>
+        </div>
+        <div class="header-nav">
+          <nav>
+            <a class="hamburger-menu" href="#"><img src="/images/Hamburger Menu.png" alt="Hamburger Icon" width="18px"></a>
+          </nav>
         </div>
       </div> 
     </header>
@@ -33,45 +33,53 @@
           <h3>Type</h3>
           <i class="fa-solid fa-chevron-right"></i>
         </div>
-        <div class="sidebar-filters">
-          <form action="">
+        <div class="sidebar-filters-container">
+          <div class="sidebar-filters">
             <input type="radio" name="typefilter" id="serif">
             <label id="serif">Serif</label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="typefilter" id="sansserif">
             <label id="sansserif">Sans Serif</label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="typefilter" id="handwriting">
             <label id="handwriting">Handwriting</label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="typefilter" id="display">
             <label id="display">Display</label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="typefilter" id="monospace">
             <label id="monospace">Monospace</label>
-          </form>
+          </div>
         </div>
         <div class="sidebar-header grid-sidebar-header">
           <h3>Rating</h3>
           <i class="fa-solid fa-chevron-right"></i>
         </div>
-        <div class="sidebar-filters">
-          <form action="">
+        <div class="sidebar-filters-container">
+          <div class="sidebar-filters">
             <input type="radio" name="ratingfilter" id="1star">
             <label id="1star"><img src="/images/Star Rating_1.png" alt="rating1star"></label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="ratingfilter" id="2star">
             <label id="2star"><img src="/images/Star Rating_2.png" alt="rating2star"></label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="ratingfilter" id="3star">
             <label id="3star"><img src="/images/Star Rating_3.png" alt="rating3star"></label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="ratingfilter" id="4star">
             <label id="4star"><img src="/images/Star Rating_4.png" alt="rating4star"></label>
-            <br>
+          </div>
+          <div class="sidebar-filters">
             <input type="radio" name="ratingfilter" id="5star">
             <label id="5star"><img src="/images/Star Rating_5.png" alt="rating5star"></label>
-          </form>
+          </div>
         </div>
       </aside>
       <!-- Item Cards Section -->
@@ -174,5 +182,6 @@
         <i class="fa-brands fa-square-github"></i>
       </div>
     </footer>
+    <script src="/src/js/main.js"></script>
   </body>
 </html>
