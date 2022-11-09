@@ -1,0 +1,34 @@
+/* font Card Component */
+.fontCard-container {
+  background-color: var(--color-light);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin: 0px 25px 15px 25px;
+  padding: 8px 20px 13px 20px;
+}
+
+.fontCard-icon {
+  padding-top: 4px;
+  text-align: left;
+}
+.fontCard-icon img {
+  width: 22px;
+}
+
+.fontCard-title {
+  font-weight: 600;
+  text-align: left;
+}
+
+.fontCard-tags {
+  grid-column-end: 3;
+  grid-column-start: 2;
+}
+
+.fontCard-open {
+  font-size: 22px;
+  grid-column-start: 3;
+  grid-row-end: 3;
+  grid-row-start: 1;
+  text-align: center;
+}

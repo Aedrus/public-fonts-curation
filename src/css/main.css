@@ -125,7 +125,7 @@ p {font-size: var(--text-p);}
    grid-template-rows: 100% auto;
 }
 
-.grid-itemCard {
+.grid-fontCard {
    align-items: center;
    display: grid;
    grid-auto-rows: 35px auto;
@@ -186,7 +186,7 @@ p {font-size: var(--text-p);}
    left: -100%;
    position: fixed;
    top: 0;
-   transition: all 0.2s ease-in-out;
+   transition: all 0.4s ease-in-out;
    width: 60vw;
 }
 .sidebar-header {
@@ -208,41 +208,6 @@ p {font-size: var(--text-p);}
 } 
 .sidebar-filters img {
    width: 78px;
-}
-
-/* Item Card Component */
-.itemCard-container {
-   background-color: var(--color-light);
-   border-top-left-radius: 7px;
-   border-top-right-radius: 7px;
-   margin: 0px 25px 15px 25px;
-   padding: 8px 20px 13px 20px;
-}
-
-.itemCard-icon {
-   padding-top: 4px;
-   text-align: left;
-}
-.itemCard-icon img {
-   width: 22px;
-}
-
-.itemCard-title {
-   font-weight: 600;
-   text-align: left;
-}
-
-.itemCard-tags {
-   grid-column-end: 3;
-   grid-column-start: 2;
-}
-
-.itemCard-open {
-   font-size: 22px;
-   grid-column-start: 3;
-   grid-row-end: 3;
-   grid-row-start: 1;
-   text-align: center;
 }
 
 /* info Card Component */

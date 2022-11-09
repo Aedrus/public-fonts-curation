@@ -2,7 +2,7 @@
  ============================================================================== */
 
 /* =====================================
-   || Sidebar Functionality
+   || Sidebar
    ===================================== */
 let hamMenu = document.querySelector('.hamburger-menu');
 let sidebar = document.querySelector('.sidebar-container');
@@ -21,3 +21,6 @@ let toggleSidebar = () => {
 
 hamMenu.addEventListener('click', toggleSidebar);
 
+/* =====================================
+   || Font Card Custom Component
+   ===================================== */
