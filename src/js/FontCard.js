@@ -13,10 +13,6 @@ template.innerHTML = `
       <img src="/images/chevron icon.png" alt="dropdown chevron">
     </div>
     <div class="fontCard-tags">
-      <button class="btn-tag"></button>
-      <button class="btn-tag"></button>
-      <button class="btn-tag"></button>
-      <button class="btn-tag"></button>
     </div>
   </div>
   <div class="info-card infoCard-container">
@@ -74,24 +70,16 @@ class FontCard extends HTMLElement {
 
   connectedCallback() {
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
-    let fontData = [];
-    let attFamily = '';
-    let attDesc = '';
-    const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('h2');
+    const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('img');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
+    const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('h2');
     const infoCard = this.shadowRoot.querySelector('.info-card');
-    const chevronDD = this.shadowRoot.querySelector('.fontCard-open');
-    chevronDD.addEventListener('click', () => {
-      if (infoCard.classList.contains('grid-infoCard')) {
-        infoCard.classList.remove('grid-infoCard')
-        chevronDD.classList.remove('active-dd')
-      } else {
-        infoCard.classList.add('grid-infoCard')
-        chevronDD.classList.add('active-dd')
-      }
-    });
+    let attDesc = '';
+    let attFamily = '';
+    let attTags = '';
+    let fontData = [];
     
-    // Fetch Google Fonts API Data and inject into card throughout.
+    // Fetch Google Fonts Data.
     fetch(api_url)
     .then((response) => response.json())
     .then((response) => {
@@ -101,13 +89,37 @@ class FontCard extends HTMLElement {
       familyHolder.innerText = fontSelect.family;
     }) .catch((error) => console.error(`ERROR: ${error}`));
 
-    // Get rating attribute and inject it into info card.
+    // Get 'desc' attribute value and inject it into card description.
     if (this.getAttribute('desc')) {
       attDesc = this.getAttribute('desc');
       descHolder.innerText = attDesc;
-    } else {descHolder.innerText = 'No description given.'}
+    } else {descHolder.innerText = 'No description given.'};
 
+    // Get 'tags' attribute value and inject it into card tags.
+    if (this.getAttribute('tags') != '') {
+      attTags = this.getAttribute('tags');
+      attTags = attTags.split(' ');
+      attTags.forEach((tag) => {
+        let fontTag = document.createElement('button')
+        fontTag.classList.add('btn-tag')
+        fontTag.innerText = tag;
+        this.shadowRoot.querySelector('.fontCard-tags').appendChild(fontTag);
+      })
+    } else {console.log(`${this.getAttribute('family')} card contains no tags!`);}
+    
+
+    // Toggle Info Card with Event Listener.
+    chevronDD.addEventListener('click', () => {
+      if (infoCard.classList.contains('grid-infoCard')) {
+        infoCard.classList.remove('grid-infoCard')
+        chevronDD.classList.remove('active-dd')
+      } else {
+        infoCard.classList.add('grid-infoCard')
+        chevronDD.classList.add('active-dd')
+      }
+    });
   }
-};
+  // END
+}
 
 window.customElements.define('font-card', FontCard);
