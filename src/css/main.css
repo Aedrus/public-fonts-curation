@@ -94,20 +94,18 @@ p {font-size: var(--text-p);}
 */
 
 #header {
-   border-bottom: solid 2px var(--color-border);
    height: 6vh;
    padding: 0 25px;
 }
 
 #footer {
-   border-top: solid 2px var(--color-border);
    height: 5vh;
    padding: 5px 0px;
 }
 
 #main {
    background-color: var(--color-bg);
-   padding-top: 25px;
+  
 }
 
 /* Alignment (Flex and Grid) */

@@ -1,12 +1,13 @@
 const template = document.createElement('template'); //Creating template element for component.
 template.innerHTML = `
 <link rel="stylesheet" href="/src/css/FontCard.css">
+  <div class="wrapper">
   <div class="font-card fontCard-container grid-fontCard">
     <div class="fontCard-icon">
       <img src="/images/Font Icon_01_@0.5x.png" alt="generic font icon" width="22px">
     </div>
     <div class="fontCard-title">
-      <h3></h3>
+      <h2></h2>
     </div>
     <div class="fontCard-open">
       <img src="/images/chevron icon.png" alt="dropdown chevron">
@@ -18,17 +19,13 @@ template.innerHTML = `
       <button class="btn-tag"></button>
     </div>
   </div>
-  <div class="info-card infoCard-container grid-infoCard">
+  <div class="info-card infoCard-container">
     <div class="infoCard-desc">
-      <h3>Description</h3>
+      <h2>Description</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam vitae beatae aspernatur, aliquam minus molestias amet temporibus quo ab?</p>
     </div>
-    <div class="infoCard-rating">
-      <img src="/images/Star Icon.png" alt="star icon">
-      <h4>5/5</h4>
-    </div>
     <div class="infoCard-preview">
-      <h3>Preview</h3>
+      <h2>Preview</h2>
       <p>The Black, leather-bound tome seemed to emit a sinister aura. Whatever it was, it was certainly no ordinary book. Oddly enough, I found myself attracted to it; I was mesmerized by its abberant nature.</p>
     </div>
     <div class="infoCard-styles">
@@ -52,6 +49,7 @@ template.innerHTML = `
       <button class="btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Font Page</button>
     </div>
   </div>
+  </div>
 `
 
 class FontCard extends HTMLElement {
@@ -64,13 +62,12 @@ class FontCard extends HTMLElement {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=${famURL}:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-    .infoCard-preview h4,
     .infoCard-preview p,
     .infoCard-styles-font h3 {
       font-family: '${this.getAttribute('family')}', 'public sans', sans-serif;
     }
     </style>
-    `;
+    `
     this.shadowRoot.innerHTML += gFontsLink;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
@@ -79,16 +76,20 @@ class FontCard extends HTMLElement {
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
     let fontData = [];
     let attFamily = '';
-    let attRating = '';
     let attDesc = '';
-    const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('h3');
-    const ratingHolder = this.shadowRoot.querySelector('.infoCard-rating').querySelector('h4');
+    const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('h2');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
-    const infoCard = this.shadowRoot.querySelector('info-card');
-    // HERE: Trying to get infocard to hide and show by pressing chevron.
-    // if (infoCard.style.display === 'hidden') {
-    //   infoCard.style.display = 'grid';
-    // } else {infoCard.style.display = 'none'};
+    const infoCard = this.shadowRoot.querySelector('.info-card');
+    const chevronDD = this.shadowRoot.querySelector('.fontCard-open');
+    chevronDD.addEventListener('click', () => {
+      if (infoCard.classList.contains('grid-infoCard')) {
+        infoCard.classList.remove('grid-infoCard')
+        chevronDD.classList.remove('active-dd')
+      } else {
+        infoCard.classList.add('grid-infoCard')
+        chevronDD.classList.add('active-dd')
+      }
+    });
     
     // Fetch Google Fonts API Data and inject into card throughout.
     fetch(api_url)
@@ -101,11 +102,6 @@ class FontCard extends HTMLElement {
     }) .catch((error) => console.error(`ERROR: ${error}`));
 
     // Get rating attribute and inject it into info card.
-    if (this.getAttribute('rating')) {
-      attRating = this.getAttribute('rating');
-      ratingHolder.innerText = `${attRating}/5`;
-    } else {ratingHolder.innerText = '0/5'}
-
     if (this.getAttribute('desc')) {
       attDesc = this.getAttribute('desc');
       descHolder.innerText = attDesc;
