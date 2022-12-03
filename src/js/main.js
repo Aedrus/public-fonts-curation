@@ -24,6 +24,3 @@ hamMenu.addEventListener('click', toggleSidebar);
 /* =====================================
    || Font Card Custom Component
    ===================================== */
-//  let testString = "This is cool!";
-//  testString = testString.replace(/ /g, '+');
-//  console.log(testString);

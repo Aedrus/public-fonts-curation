@@ -6,9 +6,6 @@
 .fontCard-container {
   background-color: var(--color-light);
   border: 1px solid #e9eaed;
-  /* border-top-left-radius: 7px;
-  border-top-right-radius: 7px; */
-  /* margin: 0px 25px 0px 25px; */
   padding: 20px 20px 20px 20px;
 }
 
@@ -45,10 +42,7 @@
 
 /* Info Card Widget (Mobile) */
 .infoCard-container {
-  background-color: var(--color-light);
-  /* border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px; */
-  /* margin: 0px 25px; */
+  background-color: #efefef;
   padding: 40px 56px 40px 56px;
   display: none;
   transition: 3s ease-in;
@@ -71,12 +65,12 @@
   grid-column: 1/5;
 }
 .infoCard-preview h2 {margin-bottom: 15px;}
-.infoCard-preview p {margin: 0 0 15px 0; line-height: 1.25rem;}
+.infoCard-preview p {font-family: var(--google-font), 'Public Sans', serif}
 .infoCard-styles {
   grid-column: 1/5;
   margin-bottom: 10px;
 }
-.infoCard-styles hr {border: 1px solid #e9eaed;}
+.infoCard-styles hr {border: 1px solid #dcdcdf;}
 .infoCard-styles-caption {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -94,7 +88,7 @@
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
 }
-.infoCard-styles-font h3 {margin-top: 0px;}
+.infoCard-styles-font h3 {margin-top: 0px; font-family: var(--google-font), 'Public Sans', serif;}
 .infoCard-link1 {
   grid-column: 1/3;
 }

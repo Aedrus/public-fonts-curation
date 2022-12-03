@@ -1,5 +1,22 @@
+/*
+Google Fonts Curation
+Created by Mario Ferrera
+
+Google Fonts Curation is a single-page library of hand-picked Google Fonts. 
+Its purpose is to give developers and designers easy access to a list of great free fonts for their projects.
+
+This website was created using vanilla HTML, CSS, and JavaScript! Additionally, we make use of the Google Fonts API
+and custom web components to create reusable and reactive font cards for each unique font.
+
+Credits:
+https://developers.google.com/fonts
+*/
+
+
 const template = document.createElement('template'); //Creating template element for component.
 template.innerHTML = `
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/src/css/FontCard.css">
   <div class="wrapper">
   <div class="font-card fontCard-container grid-fontCard">
@@ -22,7 +39,7 @@ template.innerHTML = `
     </div>
     <div class="infoCard-preview">
       <h2>Preview</h2>
-      <p>The Black, leather-bound tome seemed to emit a sinister aura. Whatever it was, it was certainly no ordinary book. Oddly enough, I found myself attracted to it; I was mesmerized by its abberant nature.</p>
+      <p contenteditable>The Black, leather-bound tome seemed to emit a sinister aura. Whatever it was, it was certainly no ordinary book. Oddly enough, I found myself attracted to it; I was mesmerized by its abberant nature.</p>
     </div>
     <div class="infoCard-styles">
       <h3>Font Styles</h3>
@@ -52,23 +69,13 @@ class FontCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({mode: 'open', delegatesFocus: true});
-    let famURL = this.getAttribute('family').replace(/ /g, '+');
-    const gFontsLink = `
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=${famURL}:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-    .infoCard-preview p,
-    .infoCard-styles-font h3 {
-      font-family: '${this.getAttribute('family')}', 'public sans', sans-serif;
-    }
-    </style>
-    `
-    this.shadowRoot.innerHTML += gFontsLink;
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
-
+  
   connectedCallback() {
+    // HERE: Trying to figure out how to get font to show for each unique card's preview paragraph. Some are borked and some are not; confusing.
+    let famURL = this.getAttribute('family').replace(/ /g, '+');
+    let gFontsLink = `<link href="https://fonts.googleapis.com/css2?family=${famURL}:wght@400;500;600&display=swap" rel="stylesheet">`
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
     const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('img');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
@@ -78,7 +85,6 @@ class FontCard extends HTMLElement {
     let attFamily = '';
     let attTags = '';
     let fontData = [];
-    
     // Fetch Google Fonts Data.
     fetch(api_url)
     .then((response) => response.json())
@@ -116,10 +122,11 @@ class FontCard extends HTMLElement {
       } else {
         infoCard.classList.add('grid-infoCard')
         chevronDD.classList.add('active-dd')
+        
       }
     });
   }
   // END
 }
 
-window.customElements.define('font-card', FontCard);
+window.customElements.define('font-card', FontCard)
