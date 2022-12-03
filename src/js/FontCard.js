@@ -27,7 +27,7 @@ template.innerHTML = `
       <h2></h2>
     </div>
     <div class="fontCard-open">
-      <img src="images/chevron icon.png" alt="Dropdown Chevron">
+      <img src="images/chevron icon.png" alt="dropdown chevron">
     </div>
     <div class="fontCard-tags">
     </div>
