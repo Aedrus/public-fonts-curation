@@ -17,7 +17,7 @@ const template = document.createElement('template'); //Creating template element
 template.innerHTML = `
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/src/css/FontCard.css">
+<link rel="stylesheet" href="src/css/FontCard.css">
   <div class="wrapper">
   <div class="font-card fontCard-container grid-fontCard">
     <div class="fontCard-icon">
