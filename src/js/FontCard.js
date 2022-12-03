@@ -27,7 +27,9 @@ template.innerHTML = `
       <h2></h2>
     </div>
     <div class="fontCard-open">
-      <img src="images/Chevron Icon.png" alt="Dropdown Chevron">
+      <span>
+        <img src="images/Chevron Icon.png" alt="Dropdown Chevron">
+      </span>
     </div>
     <div class="fontCard-tags">
     </div>
@@ -77,7 +79,7 @@ class FontCard extends HTMLElement {
     let famURL = this.getAttribute('family').replace(/ /g, '+');
     let gFontsLink = `<link href="https://fonts.googleapis.com/css2?family=${famURL}:wght@400;500;600&display=swap" rel="stylesheet">`
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
-    const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('img');
+    const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('span');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
     const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('h2');
     const infoCard = this.shadowRoot.querySelector('.info-card');
