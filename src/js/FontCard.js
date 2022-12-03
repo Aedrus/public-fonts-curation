@@ -21,13 +21,13 @@ template.innerHTML = `
   <div class="wrapper">
   <div class="font-card fontCard-container grid-fontCard">
     <div class="fontCard-icon">
-      <img src="/images/Font Icon_01_@0.5x.png" alt="generic font icon" width="22px">
+      <img src="images/Font Icon_01_@0.5x.png" alt="generic font icon" width="22px">
     </div>
     <div class="fontCard-title">
       <h2></h2>
     </div>
     <div class="fontCard-open">
-      <img src="/images/chevron icon.png" alt="dropdown chevron">
+      <img src="images/chevron icon.png" alt="dropdown chevron">
     </div>
     <div class="fontCard-tags">
     </div>
