@@ -154,6 +154,7 @@ p {font-size: var(--text-p);}
    width: 20%;
    z-index: 2;
 }
+.header-nav img {cursor: pointer;}
 
 .header-title h1 {
    font-size: 1.0rem;

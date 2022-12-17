@@ -6,6 +6,7 @@
 .fontCard-container {
   background-color: var(--color-light);
   border: 1px solid #e9eaed;
+  margin: 0 5%;
   padding: 20px 20px 20px 20px;
 }
 
@@ -48,8 +49,9 @@
 /* Info Card Widget (Mobile) */
 .infoCard-container {
   background-color: #efefef;
-  padding: 40px 56px 40px 56px;
   display: none;
+  margin: 0 5%;
+  padding: 40px 56px 40px 56px;
   transition: 3s ease-in;
 }
 .infoCard-container h3 {margin-bottom: 15px;}
@@ -70,7 +72,7 @@
   grid-column: 1/5;
 }
 .infoCard-preview h2 {margin-bottom: 15px;}
-.infoCard-preview p {font-family: var(--google-font), 'Public Sans', serif}
+.infoCard-preview img {width: 240px;}
 .infoCard-styles {
   grid-column: 1/5;
   margin-bottom: 10px;

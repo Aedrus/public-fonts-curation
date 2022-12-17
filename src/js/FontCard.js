@@ -41,7 +41,7 @@ template.innerHTML = `
     </div>
     <div class="infoCard-preview">
       <h2>Preview</h2>
-      <p contenteditable>The Black, leather-bound tome seemed to emit a sinister aura. Whatever it was, it was certainly no ordinary book. Oddly enough, I found myself attracted to it; I was mesmerized by its abberant nature.</p>
+      <img >
     </div>
     <div class="infoCard-styles">
       <h3>Font Styles</h3>
@@ -75,17 +75,18 @@ class FontCard extends HTMLElement {
   }
   
   connectedCallback() {
-    // HERE: Trying to figure out how to get font to show for each unique card's preview paragraph. Some are borked and some are not; confusing.
     let famURL = this.getAttribute('family').replace(/ /g, '+');
     let gFontsLink = `<link href="https://fonts.googleapis.com/css2?family=${famURL}:wght@400;500;600&display=swap" rel="stylesheet">`
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
     const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('span');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
     const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('h2');
+    const specimenHolder = this.shadowRoot.querySelector('.infoCard-preview').querySelector('img');
     const infoCard = this.shadowRoot.querySelector('.info-card');
     let attDesc = '';
     let attFamily = '';
     let attTags = '';
+    let attSpecimen = '';
     let fontData = [];
     // Fetch Google Fonts Data.
     fetch(api_url)
@@ -113,18 +114,37 @@ class FontCard extends HTMLElement {
         fontTag.innerText = tag;
         this.shadowRoot.querySelector('.fontCard-tags').appendChild(fontTag);
       })
-    } else {console.log(`${this.getAttribute('family')} card contains no tags!`);}
+      } else {console.log(`${this.getAttribute('family')} card contains no tags!`);
+    };
     
+    // Get 'specimen' attribute value and inject it into img src for preview.
+    let addSpecimen = () => {
+      attSpecimen = this.getAttribute('specimen');
+      specimenHolder.setAttribute('src', `images/Specimen/${attSpecimen}.png`)
+    };
+    let removeSpecimen = () => {
+      attSpecimen = this.getAttribute('specimen');
+      specimenHolder.setAttribute('src', '')
+    };
+    // // * Non-Function Variant for specimen injection.
+    // --------------------------------------------------
+    // if (this.getAttribute('specimen')) {
+    //   attSpecimen = this.getAttribute('specimen');
+    //   specimenHolder.setAttribute('src', `images/Specimen/${attSpecimen}.png`)
+    // } else {
+    //   console.log('Error: No specimen attribute value present.')
+    // }
 
     // Toggle Info Card with Event Listener.
     chevronDD.addEventListener('click', () => {
       if (infoCard.classList.contains('grid-infoCard')) {
         infoCard.classList.remove('grid-infoCard')
         chevronDD.classList.remove('active-dd')
+        removeSpecimen()
       } else {
         infoCard.classList.add('grid-infoCard')
         chevronDD.classList.add('active-dd')
-        
+        addSpecimen()
       }
     });
   }
