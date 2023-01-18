@@ -21,10 +21,10 @@ template.innerHTML = `
   <div class="wrapper">
   <div class="font-card fontCard-container grid-fontCard">
     <div class="fontCard-icon">
-      <img src="images/Font Icon_01_@0.5x.png" alt="generic font icon" width="22px">
+      <img src="images/Font Icon_01_@0.5x.png" alt="generic font icon" width="23px">
     </div>
     <div class="fontCard-title">
-      <h2></h2>
+      <img>
     </div>
     <div class="fontCard-open">
       <span>
@@ -80,7 +80,7 @@ class FontCard extends HTMLElement {
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
     const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('span');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
-    const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('h2');
+    const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('img');
     const specimenHolder = this.shadowRoot.querySelector('.infoCard-preview').querySelector('img');
     const infoCard = this.shadowRoot.querySelector('.info-card');
     let attDesc = '';
@@ -98,6 +98,11 @@ class FontCard extends HTMLElement {
       familyHolder.innerText = fontSelect.family;
     }) .catch((error) => console.error(`ERROR: ${error}`));
 
+    // Get 'specimen' attribute value and inject it into card title as image. 
+    if(this.getAttribute('specimen')) {
+      attSpecimen = this.getAttribute('specimen');
+      familyHolder.setAttribute('src', `images/Specimen/p/${attSpecimen}.png`)
+    };
     // Get 'desc' attribute value and inject it into card description.
     if (this.getAttribute('desc')) {
       attDesc = this.getAttribute('desc');

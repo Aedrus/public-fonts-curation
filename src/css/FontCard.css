@@ -1,6 +1,6 @@
 /* Font Card Component */
 .wrapper {
-  margin: 0 ;
+  margin: 10px;
 }
 
 .fontCard-container {
@@ -16,11 +16,10 @@
 }
 
 .fontCard-title {
-  font-weight: 600;
-  text-align: left;
+  width: auto;
 }
-.fontCard-title h2 {
-  margin: 0;
+.fontCard-title img {
+  width: 220px;
 }
 
 .fontCard-tags {
