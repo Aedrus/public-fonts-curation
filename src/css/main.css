@@ -71,7 +71,7 @@ p {font-size: var(--text-p);}
       --text-display: 52px;
       --text-h1: 48px;
       --text-h2: 32px;
-      --text-h3: 26px;
+      --text-h3: 24px;
       --text-h4: 16px;
       --text-h5: 12px;
       --text-p: 16px;
@@ -106,6 +106,7 @@ p {font-size: var(--text-p);}
 #main {
    background-color: var(--color-bg);
    padding-top: 10px;
+   padding-bottom: 10px;
 }
 
 /* Alignment (Flex and Grid) */

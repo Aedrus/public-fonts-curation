@@ -6,17 +6,20 @@
 .fontCard-container {
   background-color: var(--color-light);
   border: 1px solid #e9eaed;
-  margin: 0 5%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 0 20%;
   padding: 20px 20px 20px 20px;
+  row-gap: 5px;
 }
 
 .fontCard-icon {
-  padding-top: 4px;
   text-align: left;
 }
 
 .fontCard-title {
   width: auto;
+  
 }
 .fontCard-title img {
   width: 220px;
@@ -49,9 +52,9 @@
 .infoCard-container {
   background-color: #efefef;
   display: none;
-  margin: 0 5%;
+  margin: 0 20%;
   padding: 40px 56px 40px 56px;
-  transition: 3s ease-in;
+  transition: 6s ease-in;
 }
 .infoCard-container h3 {margin-bottom: 15px;}
 .infoCard-rating {

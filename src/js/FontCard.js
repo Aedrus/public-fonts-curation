@@ -39,24 +39,6 @@ template.innerHTML = `
       <h2>Description</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam vitae beatae aspernatur, aliquam minus molestias amet temporibus quo ab?</p>
     </div>
-    <div class="infoCard-preview">
-      <h2>Preview</h2>
-      <img >
-    </div>
-    <div class="infoCard-styles">
-      <h3>Font Styles</h3>
-      <hr>
-        <div class="infoCard-styles-caption">
-          <h5>400 (R)</h5>
-          <h5>500 (M)</h5>
-          <h5>600 (B)</h5>
-        </div>
-        <div class="infoCard-styles-font">
-          <h3 class="fw-400">Font</h3>
-          <h3 class="fw-500">Font</h3>
-          <h3 class="fw-600">Font</h3>
-        </div>
-    </div>
     <div class="infoCard-link1">
       <button class="btn-primary"><i class="fa-solid fa-copy"></i> Code Link</button>
     </div>
@@ -81,7 +63,7 @@ class FontCard extends HTMLElement {
     const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('span');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
     const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('img');
-    const specimenHolder = this.shadowRoot.querySelector('.infoCard-preview').querySelector('img');
+    // const specimenHolder = this.shadowRoot.querySelector('.infoCard-preview').querySelector('img');
     const infoCard = this.shadowRoot.querySelector('.info-card');
     let attDesc = '';
     let attFamily = '';
@@ -101,7 +83,7 @@ class FontCard extends HTMLElement {
     // Get 'specimen' attribute value and inject it into card title as image. 
     if(this.getAttribute('specimen')) {
       attSpecimen = this.getAttribute('specimen');
-      familyHolder.setAttribute('src', `images/Specimen/p/${attSpecimen}.png`)
+      familyHolder.setAttribute('src', `./images/font/webp/${attSpecimen}.webp`)
     };
     // Get 'desc' attribute value and inject it into card description.
     if (this.getAttribute('desc')) {
@@ -123,14 +105,14 @@ class FontCard extends HTMLElement {
     };
     
     // Get 'specimen' attribute value and inject it into img src for preview.
-    let addSpecimen = () => {
-      attSpecimen = this.getAttribute('specimen');
-      specimenHolder.setAttribute('src', `images/Specimen/${attSpecimen}.png`)
-    };
-    let removeSpecimen = () => {
-      attSpecimen = this.getAttribute('specimen');
-      specimenHolder.setAttribute('src', '')
-    };
+    // let addSpecimen = () => {
+    //   attSpecimen = this.getAttribute('specimen');
+    //   specimenHolder.setAttribute('src', `images/Specimen/${attSpecimen}.png`)
+    // };
+    // let removeSpecimen = () => {
+    //   attSpecimen = this.getAttribute('specimen');
+    //   specimenHolder.setAttribute('src', '')
+    // };
     // // * Non-Function Variant for specimen injection.
     // --------------------------------------------------
     // if (this.getAttribute('specimen')) {
