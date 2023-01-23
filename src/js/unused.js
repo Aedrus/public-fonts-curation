@@ -20,3 +20,7 @@ let infoCard_fontStyles = `<div class="infoCard-styles">
     <h3 class="fw-600">Font</h3>
   </div>
 </div>`
+
+let infoCard_link2 = `<div class="infoCard-link2">
+<button class="btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Font Page</button>
+</div>`

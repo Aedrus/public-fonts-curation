@@ -48,7 +48,6 @@ h3 {font-size: var(--text-h3);}
 h4 {font-size: var(--text-h4);}
 h5 {font-size: var(--text-h5);}
 p {font-size: var(--text-p);}
-
 /* =====================================
    || Theme & Utility Rules
    =====================================
@@ -61,6 +60,7 @@ p {font-size: var(--text-p);}
    html { /* Define global reusable Variables/custom properties. Saves time. */
       --color-primary: #457CE7;
       --color-primary-accent: #8091B3;
+      --color-primary-hover: #3d6cca;
       --color-secondary: #F5D63D;
       --color-dark: #0D0D0D;
       --color-light: #FFFFFF;

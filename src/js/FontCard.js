@@ -1,8 +1,8 @@
 /*
-Google Fonts Curation
+Public Font Curation
 Created by Mario Ferrera
 
-Google Fonts Curation is a single-page library of hand-picked Google Fonts. 
+Public Font Curation is a single-page library of hand-picked Google Fonts—and others. 
 Its purpose is to give developers and designers easy access to a list of great free fonts for their projects.
 
 This website was created using vanilla HTML, CSS, and JavaScript! Additionally, we make use of the Google Fonts API
@@ -11,7 +11,6 @@ and custom web components to create reusable and reactive font cards for each un
 Credits:
 https://developers.google.com/fonts
 */
-
 
 const template = document.createElement('template'); //Creating template element for component.
 template.innerHTML = `
@@ -39,11 +38,31 @@ template.innerHTML = `
       <h2>Description</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem numquam vitae beatae aspernatur, aliquam minus molestias amet temporibus quo ab?</p>
     </div>
-    <div class="infoCard-link1">
-      <button class="btn-primary"><i class="fa-solid fa-copy"></i> Code Link</button>
+    <div class="infoCard-info">
+      <h2>Information</h2>
+      <table class="info-table">
+        <thead>
+          <tr>
+            <td class="info-table-header">License</td>
+            <td class="info-table-body">Open-Source</td>
+          </tr>
+          <tr>
+            <td class="info-table-header">Source</td>
+            <td class="info-table-body">Google Fonts</td>
+          </tr>
+          <tr>
+            <td class="info-table-header">Category</td>
+            <td class="info-table-body">Serif</td>
+          </tr>
+          <tr>
+            <td class="info-table-header">Rating</td>
+            <td class="info-table-body"><img src="./images/Star Rating_3.png" alt="star rating of three out of five" width="90px"></td>
+          </tr>
+        </thead>
+      </table>
     </div>
-    <div class="infoCard-link2">
-      <button class="btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Font Page</button>
+    <div class="infoCard-link1">
+      <a href="" target="_blank"><button class="btn-primary"><i class="fa-solid fa-copy"></i>Font Page</button></a>
     </div>
   </div>
   </div>
@@ -61,11 +80,13 @@ class FontCard extends HTMLElement {
     let gFontsLink = `<link href="https://fonts.googleapis.com/css2?family=${famURL}:wght@400;500;600&display=swap" rel="stylesheet">`
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
     const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('span');
+    const linkHolder = this.shadowRoot.querySelector('.infoCard-link1').querySelector('a');
     const descHolder = this.shadowRoot.querySelector('.infoCard-desc').querySelector('p');
     const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('img');
     // const specimenHolder = this.shadowRoot.querySelector('.infoCard-preview').querySelector('img');
     const infoCard = this.shadowRoot.querySelector('.info-card');
     let attDesc = '';
+    let attLink = '';
     let attFamily = '';
     let attTags = '';
     let attSpecimen = '';
@@ -85,6 +106,13 @@ class FontCard extends HTMLElement {
       attSpecimen = this.getAttribute('specimen');
       familyHolder.setAttribute('src', `./images/font/webp/${attSpecimen}.webp`)
     };
+
+    // Get 'link' attribute value and inject it into card links.
+    if (this.getAttribute('link')) {
+      attLink = this.getAttribute('link');
+      linkHolder.setAttribute('href', attLink);
+    } else {console.log(`No link provided for ${this.getAttribute('family')}`)};
+
     // Get 'desc' attribute value and inject it into card description.
     if (this.getAttribute('desc')) {
       attDesc = this.getAttribute('desc');
