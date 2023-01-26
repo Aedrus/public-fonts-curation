@@ -20,12 +20,13 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 > DISCLAIMER: Always read the license carefully. Not all free fonts allow for commercial use and some may require attribution.
 
 ## Dev Progress Checker
-- [x] Custom HTML Element for cards using ShadowDOM
+- [x] Custom HTML Element for cards
 - [x] API Integration (Deprecated)
 - [x] Header bar
-- [ ] Functional Nav/Filter Menu
-- [ ] Functional links and card information
-- [ ] Functional card tags
-- [ ] Functional Footer
+- [ ] Sidebar menu functionality
+- [x] Info Card link functionality
+- [x] Font Card tags w/ color variants
+- [x] Font Card "extra" tags tooltip
+- [x] Footer bar + social links
 - [ ] Page optimizations and SEO
-- [ ] Responsive layout
+- [ ] Responsive layout - Mobile/Tablet + Desktop Variants
