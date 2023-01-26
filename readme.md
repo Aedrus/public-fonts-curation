@@ -23,7 +23,7 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 - [x] Custom HTML Elements (FontCard)
 - [x] Google API Integration (Deprecated)
 - [x] * Header + Hamburger Menu
-- [ ] * Hamburger Menu Animations
+- [x] * Hamburger Menu Animations
 - [ ] Sidebar Menu Functionality
 - [x] * Sidebar Menu Animations
 - [x] * Info-Card Link Functionality
