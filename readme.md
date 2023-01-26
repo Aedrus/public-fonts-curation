@@ -20,13 +20,19 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 > DISCLAIMER: Always read the license carefully. Not all free fonts allow for commercial use and some may require attribution.
 
 ## Dev Progress Checker
-- [x] Custom HTML Element for cards
-- [x] API Integration (Deprecated)
-- [x] Header bar
-- [ ] Sidebar menu functionality
-- [x] Info Card link functionality
-- [x] Font Card tags w/ color variants
-- [x] Font Card "extra" tags tooltip
-- [x] Footer bar + social links
-- [ ] Page optimizations and SEO
+- [x] Custom HTML Elements (FontCard)
+- [x] Google API Integration (Deprecated)
+- [x] * Header + Hamburger Menu
+- [ ] * Hamburger Menu Animations
+- [ ] Sidebar Menu Functionality
+- [x] * Sidebar Menu Animations
+- [x] * Info-Card Link Functionality
+- [x] * Info-Card Animations
+- [x] * Font-Card Tags + Color Variants
+- [x] * Font-Card Tags Tooltip Functionality
+- [x] * Font-Card Tags Tooltip Animations
+- [x] * Footer + Social Links
+- [ ] Page Optimizations and SEO
 - [ ] Responsive layout - Mobile/Tablet + Desktop Variants
+
+Tasks marked with a * are part of a recent update.
