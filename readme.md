@@ -24,7 +24,8 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 - [x] Google API Integration (Deprecated)
 - [x] * Header + Hamburger Menu
 - [x] * Hamburger Menu Animations
-- [ ] Sidebar Menu Functionality
+- [x] * Sidebar Menu Filter Functionality
+- [x] * Sidebar Menu Reset Functionality
 - [x] * Sidebar Menu Animations
 - [x] * Info-Card Link Functionality
 - [x] * Info-Card Animations
@@ -32,7 +33,8 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 - [x] * Font-Card Tags Tooltip Functionality
 - [x] * Font-Card Tags Tooltip Animations
 - [x] * Footer + Social Links
-- [ ] Page Optimizations and SEO
+- [ ] OnPage Optimizations and SEO
 - [ ] Responsive layout - Mobile/Tablet + Desktop Variants
+- [ ] Refactoring + QOL
 
-Tasks marked with a * are part of a recent update.
+Tasks marked with a * are ready for next update.
