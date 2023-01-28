@@ -20,7 +20,7 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 > DISCLAIMER: Always read the license carefully. Not all free fonts allow for commercial use and some may require attribution.
 
 ## Dev Progress Checker
-- [x] Custom HTML Elements (FontCard)
+- [x] HTML Web Components Implementation - Shadow DOM (FontCard)
 - [x] Google API Integration (Deprecated)
 - [x] * Header + Hamburger Menu
 - [x] * Hamburger Menu Animations
@@ -35,6 +35,7 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 - [x] * Footer + Social Links
 - [ ] Responsive layout - Mobile/Tablet + Desktop Variants
 - [ ] OnPage Optimizations and SEO
+- [ ] Accessibility Tweaks and Features
 - [ ] Refactoring + QOL
 
 Tasks marked with a * are ready for next update.
