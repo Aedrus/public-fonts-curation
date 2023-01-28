@@ -33,8 +33,8 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 - [x] * Font-Card Tags Tooltip Functionality
 - [x] * Font-Card Tags Tooltip Animations
 - [x] * Footer + Social Links
-- [ ] OnPage Optimizations and SEO
 - [ ] Responsive layout - Mobile/Tablet + Desktop Variants
+- [ ] OnPage Optimizations and SEO
 - [ ] Refactoring + QOL
 
 Tasks marked with a * are ready for next update.
