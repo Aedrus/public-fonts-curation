@@ -35,15 +35,25 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 - [x] * Font-Card Tags Tooltip Functionality
 - [x] * Font-Card Tags Tooltip Animations
 - [x] * Footer + Social Links
-- [x] Responsive layout - Mobile/Tablet/Desktop Variants
-- [x] Page Optimizations and SEO
-- [ ] Accessibility Tweaks and Features
+- [x] * Responsive layout - Mobile/Tablet/Desktop Variants
+- [x] * Page Optimizations and SEO
+- [x] * Accessibility Tweaks and Features
 - [ ] Refactoring + QOL
 
 Tasks marked with a * are ready for next update.
 
 ## Changelogs
 ### Version 1.1
+
+__Sections and Content__
+- Tweaked header bar and hamburger menu
+- Added FontCard link functionality
+- Added sidebar filter functionality and animations
+- Tweaked footer social media links
+- Revamped FontCard tags appearance and functionality
+- Added extra tag tooltip functionality
+- Added responsive layouts for mobile, tablet, and desktop
+- Various small tweaks and bug fixes
 
 __Page Optimizations and SEO__
 - Added favicon to site
@@ -56,5 +66,4 @@ __Accessibility__
 - Added tweaks for keyboard-only users
 - Added tweaks for screen reader users
 - Improved contrast with text and UI
-- Improved semantics of elements.
-- 
+- Improved semantics of elements
