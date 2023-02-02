@@ -59,43 +59,51 @@ p {font-size: var(--text-p);}
 */
 
    html { /* Define global reusable Variables/custom properties. Saves time. */
-      --color-primary: #457CE7;
+      --color-primary: hsl(220, 77%, 55%);
       --color-primary-accent: #8091B3;
+      --color-primary-hover: hsl(220, 57%, 50%);
       --color-secondary: #F5D63D;
       --color-dark: #0D0D0D;
       --color-light: #FFFFFF;
-      --color-border: #e9eaed;
-      --color-bg: #E0E2E6;
+      --color-border: hsl(220, 5%, 80%);
+      --color-bg: #d8d9dd;
       --color-unselected: #F7F7F8;
+      --color-error: hsl(0, 77%, 53%);
+      --color-error-hover: hsl(0, 57%, 48%);
 
       --text-display: 52px;
       --text-h1: 48px;
-      --text-h2: 32px;
-      --text-h3: 26px;
+      --text-h2: 27px;
+      --text-h3: 20px;
       --text-h4: 16px;
       --text-h5: 12px;
       --text-p: 16px;
       --text-p-small: 12px;
    }
-/* Colors */
+/* Color */
 
-   .text-primary {
+   .text-brand {
       color: var(--color-primary);
    }
 
 /* =====================================
    || Layout Rules
    =====================================
-   * Contains styling for the larger sections of a page, as well as alignment styles. 
+   * Contains styling for the larger sections of a page, as well as alignment styles. Also includes media queries.
    * ID's may be used for larger sections.
    * 
    * e.g. header, footer, sidebar, main navigation, article, container, maincontent, etc.
    * e.g. grid, flex, display, etc.
 */
 
+#body-container {
+   display: grid;
+}
+
 #header {
-   height: 6vh;
+   height: 7vh;
    padding: 0 25px;
+   border-bottom: 1px solid var(--color-border);
 }
 
 #footer {
@@ -105,7 +113,8 @@ p {font-size: var(--text-p);}
 
 #main {
    background-color: var(--color-bg);
-  
+   padding-bottom: 10px;
+   padding-top: 10px;
 }
 
 /* Alignment (Flex and Grid) */
@@ -149,10 +158,14 @@ p {font-size: var(--text-p);}
 }
 
 .header-nav {
-   text-align: right;
    justify-items: end;
+   text-align: right;
    width: 20%;
-   z-index: 2;
+   z-index: 8;
+}
+.header-nav img {
+   cursor: pointer;
+   transition: all 300ms ease-in-out;
 }
 
 .header-title h1 {
@@ -167,22 +180,38 @@ p {font-size: var(--text-p);}
    text-align: center;
 }
 .footer-social i {margin: 0px 5px;}
+.footer-social a {
+   color: var(--color-primary);
+   transition: all 400ms ease-in-out;
+}
+.footer-social a:hover {
+   color: var(--color-primary-hover);
+}
 
 /* Sidebar Filter Component */
 .sidebar-container {
    background-color: var(--color-light);
-   bottom: 0;
    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
-   left: -100%;
+   height: 100vh;
    position: fixed;
    top: 0;
-   transition: all 0.4s ease-in-out;
-   width: 60vw;
+   transition: all 300ms;
+   width: 300px;
+   z-index: 7;
+}
+.sidebar-blanket{
+   background: black;
+   width: 100vw;
+   height: 100vh;
+   position: fixed;
+   opacity: 0.3;
+   z-index: 6;
+   transition: 300ms ease-in-out;
 }
 .sidebar-header {
    align-items: center;
+   background-color: var(--color-bg);
    height: 60px;
-   border-bottom: 1px solid var(--color-border);
    justify-content: flex-start;
    padding-left: 25px;
    text-align: left;
@@ -200,17 +229,113 @@ p {font-size: var(--text-p);}
    width: 78px;
 }
 
+.sidebar-button {
+   text-align: center;
+   margin: 15px 0;
+}
+
 /* Button Components */
 .btn-primary {
    background-color: var(--color-primary);
    border-radius: 4px;
    border: none;
    color: var(--color-light);
+   cursor: pointer;
    font-size: var(--text-p);
    padding: 8px 20px;
    text-align: center;
+   transition: all 300ms ease-in-out;
+   z-index: 1;
 }
 
+.btn-primary:hover {
+background-color: var(--color-primary-hover);
+}
+
+.btn-submit {
+background-color: var(--color-primary);
+border-radius: 4px;
+border: none;
+color: var(--color-light);
+cursor: pointer;
+font-size: var(--text-p);
+padding: 5px 20px;
+text-align: center;
+transition: all 300ms ease-in-out;
+width: 80%;
+}
+
+.btn-submit:hover {
+background-color: var(--color-primary-hover);
+}
+
+.btn-reset {
+background-color: var(--color-error);
+border-radius: 4px;
+border: none;
+color: var(--color-light);
+cursor: pointer;
+font-size: var(--text-p);
+padding: 5px 20px;
+text-align: center;
+transition: all 300ms ease-in-out;
+width: 80%;
+}
+
+.btn-reset:hover {
+background-color: var(--color-error-hover);
+}
+
+/* Tag Components (Button Style) */
+.tag {
+   background-color: var(--color-primary);
+   border-radius: 10px;
+   border: none;
+   color: var(--color-light);
+   font-size: var(--text-p-small);
+   font-weight: 500;
+   height: 23px;
+   margin: 0 5px 5px 0;
+   opacity: 0.95;
+   padding: 2px 12px;
+   text-align: center;
+   }
+   
+   .tag:hover {
+   opacity: 0.9;
+   }
+   
+   .tag-sans {
+   background-color: hsl(27, 75%, 43%);
+   border-radius: 10px;
+   border: 2px solid rgba(10, 10, 10, 0.15);
+   color: var(--color-light);
+   font-size: var(--text-p-small);
+   font-weight: 500;
+   height: 23px;
+   margin-right: 5px;
+   opacity: 0.95;
+   padding: 2px 12px;
+   text-align: center;
+   }
+   .tag-serif{
+   background-color: hsl(252, 73%, 61%);
+   border-radius: 10px;
+   border: 2px solid rgba(10, 10, 10, 0.15);
+   color: var(--color-light);
+   font-size: var(--text-p-small);
+   font-weight: 500;
+   height: 23px;
+   margin-right: 5px;
+   opacity: 0.95;
+   padding: 2px 12px;
+   text-align: center;
+   }
+   
+   .tag-serif:hover,
+   .tag-sans:hover {
+   opacity: 0.9;
+   }
 
 /* =====================================
    || State Rules
@@ -222,8 +347,76 @@ p {font-size: var(--text-p);}
    * e.g. isActive, hasError, InputSuccess, hidden, shown, etc.
 */
 
+/* Sidebar States */
+.isOpen {
+   visibility: visible;
+   left: 0%;
+}
 
+.isClosed {
+   visibility: hidden;
+   left: -100%;
+}
 
+/* Sidebar Blanket States */
+.translucent {
+   visibility: visible;
+   opacity: 0.3;
+}
 
+.transparent {
+   visibility: hidden;
+   opacity: 0;
+}
+
+/* Hamburger Menu States */
+.hamActive{
+   transform: rotate(90deg);
+}
+
+.hamDefault{
+   transform: rotate(0deg);
+}
+
+/* Font-Card States */
+.cardActive{
+   display: block;
+   /* opacity: 1; */
+}
+.cardInactive{
+   display: none;
+   /* height: 0;
+   opacity: 0;
+   overflow: hidden; */
+}
+
+/* Responsive Design/Layout */
+/* Mobile */
+@media (max-width: 720px){
+   font-card {
+      display: block;
+      margin: 20px 0;
+   }
+   .sidebar-container {
+      width: 230px;
+   }
+ }
+ /* Tablet */
+ @media (min-width:  720px) and (max-width: 1024px){
+   font-card {
+      display: block;
+      margin: 20px 0;
+      }
+ }
+ /* Desktop */
+ @media (min-width: 1024px){
+   #main {
+      padding: 0 0 40px 0;
+   }
+   font-card {
+      background-color: var(--color-unselected);
+      width: 100%;
+   }
+ }
 
 

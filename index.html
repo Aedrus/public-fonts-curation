@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="author" content="Mario Ferrera">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="src/css/main.css">
-  <title>Public Font Curation</title>
+  <link rel="stylesheet" href="./src/css/main.css">
+  <title>Public Font Curation - Explore free Fonts</title>
+  <meta name="description" content="The Public Font Curation collects high-quality free fonts from around the web for easy use by designers and developers.">
+  <meta name="keywords" content="fonts, free fonts, font collection, openfont, best fonts free download, free fonts download">
+  <link rel="shortcut icon" href="./images/Public Font Curation Favicon.png" type="image/x-icon">
 </head>
   <body>
+    <!-- Sidebar Blanket -->
+    <div class="sidebar-blanket transparent"></div>
+    <div id="body-container">
     <!-- Header Content Section -->
     <header id="header" class="flex-header">
       <div class="header-container flex-header">
         <div class="header-title">
-          <h1>Public Font <span class="text-primary">Curation</span></h1>
+          <h1>Public Font <span class="text-brand">Curation</span></h1>
         </div>
         <div class="header-nav">
           <nav>
             <span class="hamburger-menu">
-              <img src="images/Hamburger Menu.png" alt="Hamburger Icon" width="18px">
+              <img class="hamDefault" src="images/Hamburger Menu.png" alt="Hamburger Menu" aria-label="open sidebar menu" width="18px" tabindex="0">
             </span>
           </nav>
         </div>
@@ -30,78 +37,90 @@
   <!-- Main Content Section -->
     <main id="main">
       <!-- Filter -->
-      <aside class="sidebar-container">
+      <aside class="sidebar-container isClosed">
         <div class="sidebar-header grid-sidebar-header">
-          <h3>Type</h3>
-          <i class="fa-solid fa-chevron-right"></i>
+          <h2>Category</h2>
         </div>
-        <div class="sidebar-filters-container">
+        <div class="sidebar-filters-container" id="sidebar-categories">
           <div class="sidebar-filters">
-            <input type="radio" name="typefilter" id="serif">
-            <label id="serif">Serif</label>
+            <input type="radio" name="typefilter" id="all" value="all" checked>
+            <label for="all" id="all">All Categories</label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="typefilter" id="sansserif">
-            <label id="sansserif">Sans Serif</label>
+            <input type="radio" name="typefilter" id="serif" value="serif">
+            <label for="serif" id="serif">Serif</label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="typefilter" id="handwriting">
-            <label id="handwriting">Handwriting</label>
+            <input type="radio" name="typefilter" id="sans-serif" value="sans-serif">
+            <label for="sans-serif" id="sans-serif">Sans Serif</label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="typefilter" id="display">
-            <label id="display">Display</label>
+            <input type="radio" name="typefilter" id="handwriting" value="handwriting">
+            <label for="handwriting" id="handwriting">Handwriting</label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="typefilter" id="monospace">
-            <label id="monospace">Monospace</label>
+            <input type="radio" name="typefilter" id="display" value="display">
+            <label for="display" id="display">Display</label>
+          </div>
+          <div class="sidebar-filters">
+            <input type="radio" name="typefilter" id="monospace" value="monospace">
+            <label for="monospace" id="monospace">Monospace</label>
           </div>
         </div>
         <div class="sidebar-header grid-sidebar-header">
-          <h3>Rating</h3>
-          <i class="fa-solid fa-chevron-right"></i>
+          <h2>Rating</h2>
         </div>
-        <div class="sidebar-filters-container">
+        <div class="sidebar-filters-container" id="sidebar-ratings">
           <div class="sidebar-filters">
-            <input type="radio" name="ratingfilter" id="1star">
-            <label id="1star"><img src="images/Star Rating_1.png" alt="rating1star"></label>
+            <input type="radio" name="ratingfilter" id="any" value="any" checked>
+            <label for="any" id="any">Any Rating</label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="ratingfilter" id="2star">
-            <label id="2star"><img src="images/Star Rating_2.png" alt="rating2star"></label>
+            <input type="radio" name="ratingfilter" id="one" value="1">
+            <label for="one" id="1star"><img src="/images/Star Rating_1.png" alt="1 star rating"></label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="ratingfilter" id="3star">
-            <label id="3star"><img src="images/Star Rating_3.png" alt="rating3star"></label>
+            <input type="radio" name="ratingfilter" id="two" value="2">
+            <label for="two" id="2star"><img src="/images/Star Rating_2.png" alt="2 star rating"></label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="ratingfilter" id="4star">
-            <label id="4star"><img src="images/Star Rating_4.png" alt="rating4star"></label>
+            <input type="radio" name="ratingfilter" id="three" value="3">
+            <label for="three" id="3star"><img src="/images/Star Rating_3.png" alt="3 star rating"></label>
           </div>
           <div class="sidebar-filters">
-            <input type="radio" name="ratingfilter" id="5star">
-            <label id="5star"><img src="images/Star Rating_5.png" alt="rating5star"></label>
+            <input type="radio" name="ratingfilter" id="four" value="4">
+            <label for="four" id="4star"><img src="/images/Star Rating_4.png" alt="4 star rating"></label>
           </div>
+          <div class="sidebar-filters">
+            <input type="radio" name="ratingfilter" id="five" value="5">
+            <label for="five" id="5star"><img src="/images/Star Rating_5.png" alt="5 star rating"></label>
+          </div>
+        </div>
+        <div class="sidebar-button">
+          <button type="submit" id="sidebar-submit" class="btn-submit">Filter</button>
+        </div>
+        <div class="sidebar-button">
+          <button type="reset" id="sidebar-reset" class="btn-reset">Reset</button>
         </div>
       </aside>
+      
       <!-- Item Cards Section -->
-      <font-card style="" family="Playfair Display" tags="sans-serif modern professional clean" desc=""><span slot=""></span></font-card>
-      <font-card family="Lora" tags="serif elegant classical" desc="Lora is a great serif font for classical and creative designs. Often used for literature, Lora can add an elegant flair to websites that need to blend modern and classical aesthetics."></font-card>
-      <font-card family="Cormorant" tags="serif elegant classical" desc="Lora is a great serif font for classical and creative designs. Often used for literature, Lora can add an elegant flair to websites that need to blend modern and classical aesthetics."></font-card>
-      <font-card family="Cormorant" tags="sans-serif professional clean" desc=""></font-card>
-      <font-card family="Spectral" tags="sans-serif modern professional clean" desc=""></font-card>
-      <font-card family="Public Sans" tags="sans-serif modern professional clean" desc=""></font-card>
+      <font-card family="playfair display" tags="serif classical historical" link= "https://fonts.google.com/specimen/Playfair+Display" desc="Playfair Display is a classical and prestigous typeface with a personality derived from the late 18th century. It can add a vintage flair to designs and works well as a heading." license="Open Font License (OFL)" source="Google Fonts" category="serif" rating="3"></font-card>
+      <font-card family="lora" tags="serif elegant classical novels" link="https://fonts.google.com/specimen/Lora" desc="Lora is a serif typeface with a classical and creative design. It can add an elegant flair to websites that need to blend modern and classical aesthetics." license="Open Font License (OFL)" source="Google Fonts" category="serif" rating="4"></font-card>
+      <font-card family="cormorant" tags="serif classical sharp compact" link="https://fonts.google.com/specimen/Cormorant" desc="Cormorant is a serif typeface with a elegant and fantasy design. It can add a unique flair to designs that need to incorporate fantasy aesthetics grounded in reality." license="Open Font License (OFL)" source="Google Fonts" category="serif" rating="4"></font-card>
+      <font-card family="spectral" tags="serif modern professional sharp" link="https://fonts.google.com/specimen/Spectral" desc="Spectral is a serif typeface with a strong and weighted design. It can add a boldness to designs that need to incorporate classical aesthetics." license="Open Font License (OFL)" source="Google Fonts" category="serif" rating="3"></font-card>
+      <font-card family="public sans" tags="sans-serif modern professional clean versatile" link="https://fonts.google.com/specimen/Public+Sans" desc="Public Sans is an exceptionally clear typeface. It adds a modern, approachable, and honest aesthetic to any design." license="Open Font License (OFL)" source="Google Fonts" category="sans-serif" rating="5"></font-card>
     </main>
 
   <!-- Footer Content Section -->
     <footer id="footer" class="flex-footer">
       <div class="footer-social flex-footer">
-        <i class="fa-brands fa-square-twitter"></i>
-        <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-brands fa-square-github"></i>
+        <a href="https://www.linkedin.com/in/mario-ferrera-0b111a192/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/Aedrus" title="Github"><i class="fa-brands fa-square-github"></i></a>
       </div>
     </footer>
-    <script src="src/js/main.js"></script>
-    <script src="src/js/FontCard.js" defer></script>
+  </div>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/FontCard.js" defer></script>
   </body>
 </html>
