@@ -7,7 +7,7 @@
   - [Why use PFC?](#why-use-pfc)
   - [Dev Progress Checker](#dev-progress-checker)
   - [Changelogs](#changelogs)
-    - [Version 1.1](#version-11)
+    - [Version 1.1 \[2/2/2023\]](#version-11-222023)
 
 ## Introduction
 The **Public Font Curation** (PFC) offers a simple collection of free fonts for web developers, designers, and other digital artists to use in their projects.
@@ -43,7 +43,7 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 Tasks marked with a * are ready for next update.
 
 ## Changelogs
-### Version 1.1
+### Version 1.1 [2/2/2023]
 
 __Sections and Content__
 - Tweaked header bar and hamburger menu
