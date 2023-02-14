@@ -49,6 +49,10 @@ h4 {font-size: var(--text-h4);}
 h5 {font-size: var(--text-h5);}
 p {font-size: var(--text-p);}
 
+label {
+   font-weight: 400;
+}
+
 /* =====================================
    || Theme & Utility Rules
    =====================================
@@ -115,6 +119,19 @@ p {font-size: var(--text-p);}
    background-color: var(--color-bg);
    padding-bottom: 10px;
    padding-top: 10px;
+}
+#intro-container {
+   background-image: url("/images/jj-ying-7JX0-bfiuxQ-unsplash.jpg");
+   padding: 100px 300px;
+   height: 50vh;
+   text-align: center;
+   position: relative;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+}
+#intro-container p {
+   grid-row: 2/3;
 }
 
 /* Alignment (Flex and Grid) */
@@ -191,7 +208,8 @@ p {font-size: var(--text-p);}
 /* Sidebar Filter Component */
 .sidebar-container {
    background-color: var(--color-light);
-   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+   box-shadow: 4px 0px 10px 0 rgba(0, 0, 0, 0.05),
+               9px 0px 10px 0px rgba(0, 0, 0, 0.08);
    height: 100vh;
    position: fixed;
    top: 0;
@@ -210,14 +228,13 @@ p {font-size: var(--text-p);}
 }
 .sidebar-header {
    align-items: center;
-   background-color: var(--color-bg);
-   height: 60px;
+   height: 30px;
    justify-content: flex-start;
-   padding-left: 25px;
+   padding: 40px 0 30px 28px;
    text-align: left;
 }
 .sidebar-filters-container {
-   padding: 20px 25px;
+   padding: 0px 25px;
 }
 
 .sidebar-filters {

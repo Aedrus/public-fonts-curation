@@ -7,6 +7,7 @@
   - [Why use PFC?](#why-use-pfc)
   - [Dev Progress Checker](#dev-progress-checker)
   - [Changelogs](#changelogs)
+    - [Version 1.11](#version-111)
     - [Version 1.1](#version-11)
 
 ## Introduction
@@ -43,6 +44,16 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 Tasks marked with a * are ready for next update.
 
 ## Changelogs
+### Version 1.11
+
+- Added 7 NEW fonts + images.
+- Improved font card descriptions for some cards.
+- User can now click on font card to open and close (Previously only chevron received click event).
+- Improved performance of drop shadow on sidebar menu.
+- Cleaned up overall design of sidebar menu.
+- First iteration of Hero section implemented.
+- Small bug fixes.
+
 ### Version 1.1
 
 __Sections and Content__
