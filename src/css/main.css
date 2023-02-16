@@ -37,9 +37,20 @@
 }
 
 body {
-   font-family: 'Public Sans', sans-serif;
    margin: 0;
    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+p {
+   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 h1 {font-size: var(--text-h1);}
@@ -75,7 +86,7 @@ label {
       --color-error: hsl(0, 77%, 53%);
       --color-error-hover: hsl(0, 57%, 48%);
 
-      --text-display: 52px;
+      --text-display: 62px;
       --text-h1: 48px;
       --text-h2: 27px;
       --text-h3: 20px;
@@ -84,6 +95,15 @@ label {
       --text-p: 16px;
       --text-p-small: 12px;
    }
+
+   .text-display {
+      font-size: var(--text-display);
+   }
+   .text-intro {
+      font-weight: 500;
+      font-size: var(--text-h3);
+   }
+
 /* Color */
 
    .text-brand {
@@ -106,7 +126,7 @@ label {
 
 #header {
    height: 7vh;
-   padding: 0 25px;
+   padding: 0 50px;
    border-bottom: 1px solid var(--color-border);
 }
 
@@ -121,21 +141,37 @@ label {
    padding-top: 10px;
 }
 #intro-container {
-   background-image: url("/images/jj-ying-7JX0-bfiuxQ-unsplash.jpg");
-   padding: 100px 300px;
-   height: 50vh;
-   text-align: center;
+   background-image: url(/images/noise-background.webp);
+   padding: 100px 100px;
+   height: 100vh;
    position: relative;
    display: grid;
    grid-template-columns: 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
+   grid-template-rows: auto;
+   justify-content: center;
+   align-items: center;
 }
-#intro-container p {
-   grid-row: 2/3;
+#intro-text{
+   text-align: left;
+   width: 80%;
+}
+#intro-image{
+   width: 100%;
+   height: 50vh;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+#hero-bottom{
+   height: 10vh;
+   text-align: center;
+   justify-content: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /* Alignment (Flex and Grid) */
-
 .flex-header {
    align-items: center;
    display: flex;
@@ -323,7 +359,7 @@ background-color: var(--color-error-hover);
    }
    
    .tag-sans {
-   background-color: hsl(27, 75%, 43%);
+   background-color: #BD3939;
    border-radius: 10px;
    border: 2px solid rgba(10, 10, 10, 0.15);
    color: var(--color-light);
