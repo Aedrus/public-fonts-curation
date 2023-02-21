@@ -361,7 +361,6 @@ background-color: var(--color-error-hover);
    .tag-sans {
    background-color: #BD3939;
    border-radius: 10px;
-   border: 2px solid rgba(10, 10, 10, 0.15);
    color: var(--color-light);
    font-size: var(--text-p-small);
    font-weight: 500;

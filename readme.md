@@ -7,6 +7,7 @@
   - [Why use PFC?](#why-use-pfc)
   - [Dev Progress Checker](#dev-progress-checker)
   - [Changelogs](#changelogs)
+    - [Version 1.13](#version-113)
     - [Version 1.12](#version-112)
     - [Version 1.11](#version-111)
     - [Version 1.1](#version-11)
@@ -45,6 +46,17 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 Tasks marked with a * are ready for next update.
 
 ## Changelogs
+### Version 1.13
+- Added NEW font - Audiowide
+- Added NEW font - Share Tech.
+- Added NEW font - Kontakt
+- Added NEW font - Ade Display
+- Added NEW font - Schabo Condensed
+- Added NEW font - Krylon
+- Added NEW font - Neoda
+- Fixed border on sans-serif tag.
+- Small bug fixes
+  
 ### Version 1.12
 - Redesigned hero section to be cleaner and more interesting.
 - Updated sans-serif tag with new red color.
