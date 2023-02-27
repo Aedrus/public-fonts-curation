@@ -7,6 +7,7 @@
   - [Why use PFC?](#why-use-pfc)
   - [Dev Progress Checker](#dev-progress-checker)
   - [Changelogs](#changelogs)
+    - [Version 1.14](#version-114)
     - [Version 1.13](#version-113)
     - [Version 1.12](#version-112)
     - [Version 1.11](#version-111)
@@ -27,25 +28,29 @@ Every font listed on PFC are **third-party fonts** that fall under an open-sourc
 ## Dev Progress Checker
 - [x] HTML Web Components Implementation - Shadow DOM (FontCard)
 - [x] Google API Integration (Deprecated)
-- [x] * Header + Hamburger Menu
-- [x] * Hamburger Menu Animations
-- [x] * Sidebar Menu Filter Functionality
-- [x] * Sidebar Menu Reset Functionality
-- [x] * Sidebar Menu Animations
-- [x] * Info-Card Link Functionality
-- [x] * Info-Card Animations
-- [x] * Font-Card Tags + Color Variants
-- [x] * Font-Card Tags Tooltip Functionality
-- [x] * Font-Card Tags Tooltip Animations
-- [x] * Footer + Social Links
-- [x] * Responsive layout - Mobile/Tablet/Desktop Variants
-- [x] * Page Optimizations and SEO
-- [x] * Accessibility Tweaks and Features
+- [x] Header + Hamburger Menu
+- [x] Hamburger Menu Animations
+- [x] Sidebar Menu Filter Functionality
+- [x] Sidebar Menu Reset Functionality
+- [x] Sidebar Menu Animations
+- [x] Info-Card Link Functionality
+- [x] Info-Card Animations
+- [x] Font-Card Tags + Color Variants
+- [x] Font-Card Tags Tooltip Functionality
+- [x] Font-Card Tags Tooltip Animations
+- [x] Footer + Social Links
+- [x] Responsive layout - Mobile/Tablet/Desktop Variants
+- [x] Page Optimizations and SEO
+- [x] Accessibility Tweaks and Features
 - [ ] Refactoring + QOL
 
 Tasks marked with a * are ready for next update.
 
 ## Changelogs
+### Version 1.14
+- Added font images for each new font in recent version 1.13
+- Small adjustments and big fixes.
+  
 ### Version 1.13
 - Added NEW font - Audiowide
 - Added NEW font - Share Tech.

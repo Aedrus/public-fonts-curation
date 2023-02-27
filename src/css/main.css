@@ -34,9 +34,6 @@
 
 * {
    box-sizing: border-box;
-}
-
-body {
    margin: 0;
    padding: 0;
 }
@@ -86,7 +83,7 @@ label {
       --color-error: hsl(0, 77%, 53%);
       --color-error-hover: hsl(0, 57%, 48%);
 
-      --text-display: 62px;
+      --text-display: 58px;
       --text-h1: 48px;
       --text-h2: 27px;
       --text-h3: 20px;
@@ -140,9 +137,9 @@ label {
    padding-bottom: 10px;
    padding-top: 10px;
 }
-#intro-container {
+#hero-container {
    background-image: url(/images/noise-background.webp);
-   padding: 100px 100px;
+   padding: 100px 50px;
    height: 100vh;
    position: relative;
    display: grid;
@@ -151,11 +148,11 @@ label {
    justify-content: center;
    align-items: center;
 }
-#intro-text{
+#hero-text{
    text-align: left;
    width: 80%;
 }
-#intro-image{
+#hero-image{
    width: 100%;
    height: 50vh;
    text-align: center;
