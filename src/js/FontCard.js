@@ -80,6 +80,8 @@ class FontCard extends HTMLElement {
     let gFontsLink = `<link href="https://fonts.googleapis.com/css2?family=${famURL}:wght@400;500;600&display=swap" rel="stylesheet">`
     const api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBlCbY4y9TxhzadqLQnO6bWE38Hua73Mb4';
     const chevronDD = this.shadowRoot.querySelector('.fontCard-open').querySelector('span');
+    const infoCard = this.shadowRoot.querySelector('.info-card');
+    const fontCard = this.shadowRoot.querySelector('.font-card');
     const familyHolder = this.shadowRoot.querySelector('.fontCard-title').querySelector('img');
     const tagsHolder = this.shadowRoot.querySelector('.fontCard-tags');
     const tagsMainHolder = this.shadowRoot.querySelector('.fontCard-tags').querySelector('.fontCard-tags-main');
@@ -89,7 +91,6 @@ class FontCard extends HTMLElement {
     const sourceHolder = this.shadowRoot.querySelector('.info-table').querySelector('.source');
     const categoryHolder = this.shadowRoot.querySelector('.info-table').querySelector('.category');
     const ratingHolder = this.shadowRoot.querySelector('.info-table').querySelector('.rating').querySelector('img');
-    const infoCard = this.shadowRoot.querySelector('.info-card');
     let attFamily = '';
     let attTags = '';
     let attLink = '';
@@ -143,7 +144,7 @@ class FontCard extends HTMLElement {
     let ttToggle = document.createElement('div');
     ttToggle.classList.add('tooltip-toggle');
     let ttToggleSymbol = document.createElement('p');
-    ttToggleSymbol.setAttribute('tabindex', '0');
+    // ttToggleSymbol.setAttribute('tabindex', '0');
     ttToggleSymbol.innerText = '...'
     ttToggle.appendChild(ttToggleSymbol);
 
@@ -214,7 +215,7 @@ class FontCard extends HTMLElement {
     } else {console.log(`No category attribute for ${this.getAttribute('family')}`);}
 
     // Toggle Info Card with Event Listener.
-    chevronDD.addEventListener('click', () => {
+    fontCard.addEventListener('click', () => {
       if (infoCard.classList.contains('active-infoCard')) {
         infoCard.classList.remove('active-infoCard')
         chevronDD.classList.remove('active-dd')
@@ -225,12 +226,12 @@ class FontCard extends HTMLElement {
     });
     
     // Reset dropdown when user clicks on "filter" and "Reset" button.
-    let fontCard = document.querySelectorAll('font-card');
+    let fontCardAll = document.querySelectorAll('font-card');
     const buttonSubmit = document.querySelector('#sidebar-submit');
     const buttonReset = document.querySelector('#sidebar-reset');
 
     function ddReset(){
-      fontCard.forEach((card) => {
+      fontCardAll.forEach((card) => {
             infoCard.classList.remove('active-infoCard')
             chevronDD.classList.remove('active-dd');
       });

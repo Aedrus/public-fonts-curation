@@ -23,7 +23,7 @@
   
 }
 .fontCard-title img {
-  width: 10em;
+  width: 13em;
 }
 
 .fontCard-tags {
@@ -48,7 +48,7 @@
   display: inline-block;
   width: 20px;
   cursor: pointer;
-  transition: all 200ms;
+  transition: all 230ms ease-in-out;
 }
 .fontCard-open img {
   width: 10px;
@@ -107,7 +107,7 @@
   background-color: #efefef;
   max-height: 0px;
   overflow: hidden;
-  transition: all 500ms 0s;
+  transition: all 350ms ease-in-out;
   visibility: hidden;
 }
 .infoCard-container h3 {margin-bottom: 15px;}
