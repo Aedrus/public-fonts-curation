@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-primary: hsl(220, 77%, 55%);
+    --color-primary-accent: #8091B3;
+    --color-primary-hover: hsl(220, 57%, 50%);
+    --color-secondary: #F5D63D;
+    --color-dark: #0D0D0D;
+    --color-light: #FFFFFF;
+    --color-border: hsl(220, 5%, 80%);
+    --color-bg: #d8d9dd;
+    --color-unselected: #F7F7F8;
+    --color-error: hsl(0, 77%, 53%);
+    --color-error-hover: hsl(0, 57%, 48%);
+
+    --text-display: 58px;
+    --text-h1: 48px;
+    --text-h2: 27px;
+    --text-h3: 20px;
+    --text-h4: 16px;
+    --text-h5: 12px;
+    --text-p: 16px;
+    --text-p-small: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+ 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+h1 {font-size: var(--text-h1);}
+h2 {font-size: var(--text-h2);}
+h3 {font-size: var(--text-h3);}
+h4 {font-size: var(--text-h4);}
+h5 {font-size: var(--text-h5);}
+p {font-size: var(--text-p);}
+
+label {
+    font-weight: 400;
+}
+
+body {
+  color: rgb(var(--color-dark));
+  background: var(--color-bg);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
